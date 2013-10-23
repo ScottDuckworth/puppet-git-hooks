@@ -22,16 +22,16 @@ STATUS=0
 trap 'rm -rf $TMPFILE' EXIT INT HUP
 
 # Check for ruby binary
-which ruby >/dev/null 2>&1 || exit 1
+type ruby >/dev/null 2>&1 || exit 1
 
 # Check for Puppet binary
-which puppet >/dev/null 2>&1 || exit 1
+type puppet >/dev/null 2>&1 || exit 1
 
 # Check for puppet-lint
-which puppet-lint >/dev/null 2>&1 || exit 1
+type puppet-lint >/dev/null 2>&1 || exit 1
 
 # Check for erb
-which erb >/dev/null 2>&1 || exit 1
+type erb >/dev/null 2>&1 || exit 1
 
 # Get correct git revision
 if git rev-parse --quiet --verify HEAD > /dev/null
